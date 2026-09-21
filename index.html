@@ -4,318 +4,383 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jesse Moroni Milton — Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1E293B;
-    --paper: #F3EEE1;
-    --brass: #A9793A;
-    --charcoal: #3A3A34;
-    --paper-line: #DCD3BC;
+    --navy: #16215C;
+    --navy-deep: #0E1640;
+    --blue: #2F5FDB;
+    --bg: #F4F6FB;
+    --text: #23283A;
+    --muted: #5B6478;
+    --border: #E1E5F0;
   }
 
   * { box-sizing: border-box; }
 
   body {
     margin: 0;
-    background: var(--paper);
-    color: var(--charcoal);
-    font-family: 'Inter', sans-serif;
-    font-size: 17px;
-    line-height: 1.65;
-  }
-
-  h1, h2, h3 {
-    font-family: 'Source Serif 4', serif;
-    color: var(--ink);
-    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
   }
 
   .wrap {
-    max-width: 720px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 0 28px;
+    padding: 0 32px;
   }
 
-  header.masthead {
-    padding: 72px 0 40px;
-    border-bottom: 1px solid var(--paper-line);
-  }
-
-  header.masthead h1 {
-    font-size: 2.4rem;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-  }
-
-  header.masthead p.role {
-    margin-top: 10px;
-    font-size: 1.05rem;
-    color: var(--brass);
-    font-weight: 500;
-  }
-
-  nav {
+  /* Header / Nav */
+  header.topbar {
+    background: var(--navy);
     position: sticky;
     top: 0;
-    background: var(--paper);
-    border-bottom: 1px solid var(--paper-line);
-    z-index: 10;
+    z-index: 20;
   }
 
-  nav .wrap {
+  header.topbar .wrap {
     display: flex;
-    gap: 28px;
-    padding: 16px 28px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 32px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .brand .avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), #7C9BFF);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  .brand span.name {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.05rem;
+  }
+
+  nav.mainnav {
+    display: flex;
+    gap: 24px;
     flex-wrap: wrap;
   }
 
-  nav a {
-    color: var(--charcoal);
+  nav.mainnav a {
+    color: #DCE3F7;
     text-decoration: none;
     font-size: 0.92rem;
     font-weight: 500;
-    border-bottom: 2px solid transparent;
-    padding-bottom: 2px;
-    margin-right: 28px;
   }
 
-  nav a:last-child {
-    margin-right: 0;
+  nav.mainnav a:hover { color: #fff; }
+
+  /* Hero */
+  .hero {
+    background: radial-gradient(circle at 20% 20%, #22317A 0%, var(--navy) 45%, var(--navy-deep) 100%);
+    color: #fff;
+    text-align: center;
+    padding: 90px 32px 80px;
   }
 
-  nav a:hover, nav a:focus-visible {
-    border-bottom-color: var(--brass);
+  .hero h1 {
+    margin: 0 0 10px;
+    font-size: 2.5rem;
+    font-weight: 800;
   }
 
+  .hero .title {
+    color: #9FB4FF;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+
+  .hero .tagline {
+    max-width: 620px;
+    margin: 0 auto;
+    color: #C7CEE8;
+    font-size: 1.02rem;
+  }
+
+  /* Sections */
   section {
     padding: 56px 0;
-    border-bottom: 1px solid var(--paper-line);
+    border-bottom: 1px solid var(--border);
   }
 
-  section:last-of-type {
-    border-bottom: none;
-  }
-
-  .entry-number {
-    font-family: 'Source Serif 4', serif;
-    font-size: 0.85rem;
-    color: var(--brass);
-    letter-spacing: 0.04em;
-    margin-bottom: 6px;
-  }
+  section:last-of-type { border-bottom: none; }
 
   section h2 {
-    font-size: 1.7rem;
-    font-weight: 600;
-    margin-bottom: 6px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 
-  .section-rule {
-    width: 48px;
-    height: 2px;
-    background: var(--brass);
-    margin: 14px 0 26px;
-    border: none;
+  section h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 24px 0 8px;
+    color: var(--text);
   }
 
-  section p {
-    margin: 0 0 16px;
-    max-width: 66ch;
+  section h3 .meta {
+    font-weight: 400;
+    color: var(--muted);
+    font-size: 0.92rem;
   }
 
-  .project {
-    margin-bottom: 32px;
+  section p { margin: 0 0 14px; color: var(--text); }
+
+  ul.bullets {
+    margin: 0 0 8px;
+    padding-left: 20px;
   }
 
-  .project:last-child {
-    margin-bottom: 0;
-  }
-
-  .project h3 {
-    font-size: 1.15rem;
-    font-weight: 600;
+  ul.bullets li {
     margin-bottom: 8px;
   }
 
+  .highlights {
+    list-style: none;
+    padding: 0;
+    margin: 18px 0 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  .highlights li {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+  }
+
+  .highlights li strong { color: var(--navy); }
+
+  .pillar {
+    margin-bottom: 30px;
+  }
+
+  .pillar:last-child { margin-bottom: 0; }
+
+  .pillar h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--navy);
+  }
+
+  hr.divider {
+    border: none;
+    border-top: 2px solid var(--border);
+    margin: 40px 0;
+  }
+
   .placeholder {
-    color: #8a8272;
+    color: #8b93a8;
     font-style: italic;
-    border-left: 2px solid var(--paper-line);
+    border-left: 3px solid var(--border);
     padding-left: 14px;
   }
 
-  .skills-list {
-    columns: 2;
-    column-gap: 32px;
+  .contact-list {
+    list-style: none;
     padding: 0;
     margin: 0;
-    list-style: none;
   }
 
-  .skills-list li {
+  .contact-list li {
     margin-bottom: 10px;
-    break-inside: avoid;
+    font-size: 1rem;
   }
 
-  .skills-list li::before {
-    content: "— ";
-    color: var(--brass);
-  }
+  .contact-list a { color: var(--blue); text-decoration: none; font-weight: 600; }
+  .contact-list a:hover { text-decoration: underline; }
 
   footer {
-    padding: 40px 0 72px;
+    background: var(--navy);
+    color: #C7CEE8;
+    text-align: center;
+    padding: 22px 20px;
     font-size: 0.9rem;
-    color: #8a8272;
   }
 
-  @media (max-width: 600px) {
-    header.masthead { padding: 48px 0 32px; }
-    header.masthead h1 { font-size: 1.9rem; }
-    .skills-list { columns: 1; }
-    nav .wrap { gap: 18px; }
+  @media (max-width: 640px) {
+    .hero { padding: 64px 20px 56px; }
+    .hero h1 { font-size: 2rem; }
+    header.topbar .wrap { justify-content: center; text-align: center; }
+    nav.mainnav { justify-content: center; }
   }
 </style>
 </head>
 <body>
 
-<header class="masthead">
+<header class="topbar">
   <div class="wrap">
-    <h1>Jesse Moroni Milton</h1>
-    <p class="role">Information Technology | FamilySearch &amp; Data Systems</p>
+    <div class="brand">
+      <div class="avatar">JM</div>
+      <span class="name">Jesse Moroni Milton</span>
+    </div>
+    <nav class="mainnav">
+      <a href="#home">Home</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills &amp; Certifications</a>
+      <a href="#projects">Projects</a>
+      <a href="#reflections">Reflections</a>
+    </nav>
   </div>
 </header>
 
-<nav>
-  <div class="wrap">
-    <a href="#introduction">Introduction</a>
-    <a href="#skills">Skills &amp; Competencies</a>
-    <a href="#experience">Professional Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#reflections">Reflections</a>
-  </div>
-</nav>
+<section class="hero" id="home">
+  <h1>Jesse Moroni Milton</h1>
+  <div class="title">Information Technology | FamilySearch &amp; Data Systems</div>
+  <p class="tagline">IT professional with hands-on experience in genealogical data systems, technical support, and infrastructure management — bringing the same care and diligence to my faith and family history work as to my technical craft.</p>
+</section>
 
 <main class="wrap">
 
-  <section id="introduction">
-    <div class="entry-number">01 — Introduction</div>
-    <h2>Introduction</h2>
-    <hr class="section-rule">
-    <p>I'm an Information Technology professional finishing my Bachelor of Science degree at Ensign College in December 2026. My work centers on data systems and technical support — currently as a Data Entry Specialist on the FamilySearch team at Springboard, and previously as an IT Support Technician. What draws me to this field is the same thing that draws me to my faith: the belief that small, careful, consistent work — whether maintaining accurate records or supporting someone through a technical problem — matters far beyond the task itself. This portfolio reflects both sides of that: the technical skills I've built and the principles that guide how I use them.</p>
-  </section>
-
-  <section id="skills">
-    <div class="entry-number">02 — Skills &amp; Competencies</div>
-    <h2>Skills &amp; Competencies</h2>
-    <hr class="section-rule">
-    <ul class="skills-list">
-      <li>Data entry and verification (large-scale, high-accuracy records)</li>
-      <li>Technical troubleshooting and IT support</li>
-      <li>System architecture and technical documentation</li>
-      <li>Data stewardship and information security awareness</li>
-      <li>Problem-solving under time constraints</li>
-      <li>Clear technical communication for non-technical audiences</li>
+  <section id="profile">
+    <h2>🚀 Professional Profile</h2>
+    <p>I'm an Information Technology graduate finishing my Bachelor of Science degree at Ensign College in December 2026. My work centers on data systems and technical support — currently as a Data Entry Specialist on the FamilySearch team at Springboard, and previously as an IT Support Technician. What draws me to this field is the same thing that draws me to my faith: the belief that small, careful, consistent work — whether maintaining accurate records or supporting someone through a technical problem — matters far beyond the task itself. This portfolio reflects both sides of that: the technical skills I've built and the principles that guide how I use them.</p>
+    <ul class="highlights">
+      <li>🎓 <strong>Education:</strong> BS &amp; AS in Information Technology, Ensign College, Utah (2026)</li>
+      <li>💾 <strong>Certifications:</strong> Technical Support Engineer, IT Professional, System Administration (Ensign College); Infrastructure Management (BlueCrest College)</li>
+      <li>🌍 <strong>Based in:</strong> Sierra Leone, working with a global remote team at Springboard</li>
     </ul>
   </section>
 
+  <section id="skills">
+    <h2>🛠️ Core IT &amp; Data Pillars</h2>
+
+    <div class="pillar">
+      <h3>🗂️ FamilySearch &amp; Data Management</h3>
+      <ul class="bullets">
+        <li>Genealogical record processing and verification using Source Linker (80+ records/day)</li>
+        <li>AI-indexed historical record review and quality assurance (400+ records/day)</li>
+        <li>Collaborative review with a global genealogy team for data accuracy and completeness</li>
+      </ul>
+    </div>
+
+    <div class="pillar">
+      <h3>💻 Technical Support &amp; Troubleshooting</h3>
+      <ul class="bullets">
+        <li>Hardware/software troubleshooting across labs and VDI environments</li>
+        <li>Account provisioning, password resets, and access management for campus systems</li>
+        <li>Issue documentation and escalation to reduce repeat incidents</li>
+      </ul>
+    </div>
+
+    <div class="pillar">
+      <h3>🖥️ System Administration &amp; Infrastructure</h3>
+      <ul class="bullets">
+        <li>Server, patch, and VPN management across multi-user infrastructure projects</li>
+        <li>VM configuration, user account management, and file permissions across lab environments</li>
+        <li>Uptime and reliability management for shared IT environments</li>
+      </ul>
+    </div>
+
+    <div class="pillar">
+      <h3>🔒 Data Stewardship &amp; Security Awareness</h3>
+      <ul class="bullets">
+        <li>Careful handling of sensitive genealogical and personal data</li>
+        <li>Awareness of data breach risks and industry response standards</li>
+        <li>Microsoft Office Suite, Google Workspace, and cross-platform collaboration tools</li>
+      </ul>
+    </div>
+  </section>
+
   <section id="experience">
-    <div class="entry-number">03 — Professional Experience</div>
-    <h2>Professional Experience</h2>
-    <hr class="section-rule">
-    <p style="margin-bottom: 28px;">
-      <strong>miltonjessemoroni@gmail.com</strong> · linkedin.com/in/jesse-moroni-milton · +232 72 837 280
+    <h2>💼 Professional Experience</h2>
+
+    <h3>Data Entry Specialist — FamilySearch <span class="meta">| Springboard | 2026 – Present</span></h3>
+    <p>Utilized Source Linker to process an average of 80 genealogical records per day, maintaining high accuracy while integrating sources and individuals into the Family Tree. Managed an average of 400 AI-indexed historical records per day, ensuring high-quality indexing and improving discoverability of genealogical records. Collaborated with a global team of genealogists to review and improve an average of 80–90 historical records daily, ensuring accurate, complete, and reliable family history data.</p>
+
+    <h3>IT Support Technician <span class="meta">| People's Choice Technology and Innovation Hub | 2025</span></h3>
+    <p>Resolved 150+ student IT tickets per semester across 3 labs and 2 VDI environments, achieving 95% first-contact resolution and cutting average downtime from 45 to 15 minutes. Managed account provisioning, password resets, and access requests for campus systems. Documented 50+ recurring issues and escalated 15% of complex tickets to senior IT staff, reducing repeat incidents by 30% over 6 months.</p>
+
+    <h3>Internship <span class="meta">| Ensign College — Academic Coursework | 2026</span></h3>
+    <p>Led 4 infrastructure projects (servers, patches, VPN) for 50+ users, delivering 2 weeks ahead of schedule. Configured and maintained 20+ VMs, 30+ user accounts, and file permissions across 4 lab environments, ensuring 99.9% uptime for student access. Completed certificate programs in Technical Support Engineer, IT Professional, and System Administration.</p>
+
+    <hr class="divider">
+
+    <h3>Education</h3>
+    <p>
+      Bachelor of Science in Information Technology — Ensign College, Utah (2026)<br>
+      Associate's Degree in Information Technology — Ensign College, Utah (2026)
     </p>
 
-    <div class="project">
-      <h3>Data Entry Specialist — FamilySearch <span style="font-weight:400; color:#8a8272;">| Springboard | 2026 – Present</span></h3>
-      <p>Utilized Source Linker to process an average of 80 genealogical records per day, maintaining high accuracy while integrating sources and individuals into the Family Tree. Managed an average of 400 AI-indexed historical records per day, ensuring high-quality indexing and improving discoverability of genealogical records. Collaborated with a global team of genealogists to review and improve an average of 80–90 historical records daily, ensuring accurate, complete, and reliable family history data.</p>
-    </div>
-
-    <div class="project">
-      <h3>IT Support Technician <span style="font-weight:400; color:#8a8272;">| People's Choice Technology and Innovation Hub | 2025</span></h3>
-      <p>Resolved 150+ student IT tickets per semester across 3 labs and 2 VDI environments, achieving 95% first-contact resolution and cutting average downtime from 45 to 15 minutes. Managed account provisioning, password resets, and access requests for campus systems. Documented 50+ recurring issues and escalated 15% of complex tickets to senior IT staff, reducing repeat incidents by 30% over 6 months.</p>
-    </div>
-
-    <div class="project">
-      <h3>Internship <span style="font-weight:400; color:#8a8272;">| Ensign College — Academic Coursework | 2026</span></h3>
-      <p>Led 4 infrastructure projects (servers, patches, VPN) for 50+ users, delivering 2 weeks ahead of schedule. Configured and maintained 20+ VMs, 30+ user accounts, and file permissions across 4 lab environments, ensuring 99.9% uptime for student access. Completed certificate programs in Technical Support Engineer, IT Professional, and System Administration.</p>
-    </div>
-
-    <div class="project">
-      <h3>Education</h3>
-      <p>
-        Bachelor of Science in Information Technology — Ensign College, Utah (2026)<br>
-        Associate's Degree in Information Technology — Ensign College, Utah (2026)
-      </p>
-    </div>
-
-    <div class="project">
-      <h3>Certificates</h3>
-      <p>
-        Technical Support Engineer — Ensign College<br>
-        IT Professional — Ensign College<br>
-        System Administration — Ensign College<br>
-        Infrastructure Management — BlueCrest College, Sierra Leone<br>
-        Pathway Connect Certificate — BYU-Pathway Worldwide
-      </p>
-    </div>
+    <h3>Certificates</h3>
+    <p>
+      Technical Support Engineer — Ensign College<br>
+      IT Professional — Ensign College<br>
+      System Administration — Ensign College<br>
+      Infrastructure Management — BlueCrest College, Sierra Leone<br>
+      Pathway Connect Certificate — BYU-Pathway Worldwide
+    </p>
   </section>
 
   <section id="projects">
-    <div class="entry-number">04 — Projects</div>
-    <h2>Projects</h2>
-    <hr class="section-rule">
+    <h2>📁 Projects</h2>
 
-    <div class="project">
-      <h3>FamilySearch Work at Springboard</h3>
-      <p>As a Data Entry Specialist on the FamilySearch team at Springboard, my role involves processing and verifying family history records with a high degree of accuracy. A recurring challenge is maintaining consistency and precision across large volumes of data, especially when records are incomplete or inconsistently formatted. I applied close attention to detail and adherence to established procedures to ensure the information stayed reliable. The outcome has been dependable, accurate records that support the broader research and family history work of the team.</p>
-    </div>
+    <h3>FamilySearch Work at Springboard</h3>
+    <p>As a Data Entry Specialist on the FamilySearch team at Springboard, my role involves processing and verifying family history records with a high degree of accuracy. A recurring challenge is maintaining consistency and precision across large volumes of data, especially when records are incomplete or inconsistently formatted. I applied close attention to detail and adherence to established procedures to ensure the information stayed reliable. The outcome has been dependable, accurate records that support the broader research and family history work of the team.</p>
 
-    <div class="project">
-      <h3>IT Support Technician</h3>
-      <p>In my prior role as an IT Support Technician, I was responsible for troubleshooting hardware and software issues and providing direct technical support to end users. A common challenge was diagnosing problems quickly under time pressure while communicating clearly with users who had varying levels of technical knowledge. I applied problem-solving skills and patience to resolve issues efficiently and reduce downtime. The outcome was improved system reliability and a better support experience for the people I assisted.</p>
-    </div>
+    <h3>IT Support Technician</h3>
+    <p>In my prior role as an IT Support Technician, I was responsible for troubleshooting hardware and software issues and providing direct technical support to end users. A common challenge was diagnosing problems quickly under time pressure while communicating clearly with users who had varying levels of technical knowledge. I applied problem-solving skills and patience to resolve issues efficiently and reduce downtime. The outcome was improved system reliability and a better support experience for the people I assisted.</p>
 
-    <div class="project">
-      <h3>Heritage Vault 2.0 Technical Proposal</h3>
-      <p>Heritage Vault 2.0 was a system architecture and technical proposal I developed for a coursework project, outlining the design for a system rather than a built application. The main challenge was working through unfamiliar technical concepts and new technology as I designed the architecture, which required extra research and learning outside of what I already knew. I applied analytical and technical writing skills to translate those new concepts into a clear, well-reasoned proposal. The outcome was a completed technical proposal that demonstrated my ability to research, design, and document a system architecture from the ground up.</p>
-    </div>
+    <h3>Heritage Vault 2.0 Technical Proposal</h3>
+    <p>Heritage Vault 2.0 was a system architecture and technical proposal I developed for a coursework project, outlining the design for a system rather than a built application. The main challenge was working through unfamiliar technical concepts and new technology as I designed the architecture, which required extra research and learning outside of what I already knew. I applied analytical and technical writing skills to translate those new concepts into a clear, well-reasoned proposal. The outcome was a completed technical proposal that demonstrated my ability to research, design, and document a system architecture from the ground up.</p>
   </section>
 
   <section id="reflections">
-    <div class="entry-number">05 — Reflections</div>
-    <h2>Reflections</h2>
-    <hr class="section-rule">
-    <div class="project">
-      <h3>Ethical Dilemma Analysis: The 2018 MyHeritage Data Breach</h3>
-      <p>MyHeritage's response to its 2018 data breach offers a useful case study in evaluating both the ethical failures that led to the incident and the professional standards demonstrated afterward. On the positive side, the company's incident response met several best-practice benchmarks: within eight hours of being notified, MyHeritage assembled an Information Security Incident Response Team, publicly disclosed the scope of the breach, and provided round-the-clock support to affected users — a level of transparency and urgency that cybersecurity commentators at the time called exemplary. The company was also honest about what had not been compromised, clarifying that more sensitive data (DNA records, family trees) sat on separate, more secure systems.</p>
-      <p>However, the underlying ethical failure is harder to excuse: the breach occurred in October 2017 but wasn't discovered until June 2018, a seven-month gap during which the exposed data sat undetected on an external server. Industry analysts pointed out that MyHeritage only learned of the breach because an outside security researcher stumbled upon it — not through its own monitoring. This raises a genuine ethical question: a company's responsibility to protect user data doesn't end with password hashing and honest disclosure after the fact; it begins with the ongoing vigilance to detect intrusions in the first place. Reactive transparency is commendable, but it doesn't fully substitute for proactive security stewardship, especially for a company entrusted with deeply personal genealogical data.</p>
-    </div>
+    <h2>🙏 Reflections</h2>
 
-    <div class="project">
-      <h3>Reflective Activity: Temple Reflection</h3>
-      <p>Rather than visiting the temple this week, I found a quiet space to sit and ponder, which felt necessary given how demanding this season has been — balancing full-time work, finishing my degree, and now this portfolio project on top of it. In that quiet, I considered the covenants I have made and the experiences that have shaped my journey, asking how they guide my daily choices, deepen my love for family, and help me grow in Christlike attributes. What surfaced most wasn't a specific answer to a specific problem, but a settling sense of peace — a reminder that the uncertainty I've been feeling about balancing so much at once doesn't have to be carried alone or resolved all at once.</p>
-      <p>That peace has a direct connection to my professional life, even though it doesn't look like it at first. Much of my stress this season comes from wanting to do well in my career while also being faithful to other commitments, and this time of pondering reminded me that seeking the spirit of the temple in daily life isn't separate from that effort — it's what makes it sustainable. I want to carry that same sense of peace into how I approach my work: not rushing through tasks out of anxiety, but working carefully and trusting that consistent effort, paired with genuine peace rather than pressure, is what will actually get me through this hard season and into the next chapter after graduation.</p>
-    </div>
+    <h3>Ethical Dilemma Analysis: The 2018 MyHeritage Data Breach</h3>
+    <p>MyHeritage's response to its 2018 data breach offers a useful case study in evaluating both the ethical failures that led to the incident and the professional standards demonstrated afterward. On the positive side, the company's incident response met several best-practice benchmarks: within eight hours of being notified, MyHeritage assembled an Information Security Incident Response Team, publicly disclosed the scope of the breach, and provided round-the-clock support to affected users — a level of transparency and urgency that cybersecurity commentators at the time called exemplary. The company was also honest about what had not been compromised, clarifying that more sensitive data (DNA records, family trees) sat on separate, more secure systems.</p>
+    <p>However, the underlying ethical failure is harder to excuse: the breach occurred in October 2017 but wasn't discovered until June 2018, a seven-month gap during which the exposed data sat undetected on an external server. Industry analysts pointed out that MyHeritage only learned of the breach because an outside security researcher stumbled upon it — not through its own monitoring. This raises a genuine ethical question: a company's responsibility to protect user data doesn't end with password hashing and honest disclosure after the fact; it begins with the ongoing vigilance to detect intrusions in the first place. Reactive transparency is commendable, but it doesn't fully substitute for proactive security stewardship, especially for a company entrusted with deeply personal genealogical data.</p>
 
-    <div class="project">
-      <h3>References</h3>
-      <p style="font-size: 0.92rem;">
-        Zorz, Z. (2018, June 6). MyHeritage suffers data breach, account details of 92+ million users compromised. <em>Help Net Security.</em> https://www.helpnetsecurity.com/2018/06/06/myheritage-data-breach/<br><br>
-        Ferguson, S. (2018, June 6). MyHeritage data breach of 92M accounts raises many questions. <em>Dark Reading.</em> https://www.darkreading.com/cloud-security/myheritage-data-breach-of-92m-accounts-raises-many-questions
-      </p>
-    </div>
+    <h3>Reflective Activity: Temple Reflection</h3>
+    <p>Rather than visiting the temple this week, I found a quiet space to sit and ponder, which felt necessary given how demanding this season has been — balancing full-time work, finishing my degree, and now this portfolio project on top of it. In that quiet, I considered the covenants I have made and the experiences that have shaped my journey, asking how they guide my daily choices, deepen my love for family, and help me grow in Christlike attributes. What surfaced most wasn't a specific answer to a specific problem, but a settling sense of peace — a reminder that the uncertainty I've been feeling about balancing so much at once doesn't have to be carried alone or resolved all at once.</p>
+    <p>That peace has a direct connection to my professional life, even though it doesn't look like it at first. Much of my stress this season comes from wanting to do well in my career while also being faithful to other commitments, and this time of pondering reminded me that seeking the spirit of the temple in daily life isn't separate from that effort — it's what makes it sustainable. I want to carry that same sense of peace into how I approach my work: not rushing through tasks out of anxiety, but working carefully and trusting that consistent effort, paired with genuine peace rather than pressure, is what will actually get me through this hard season and into the next chapter after graduation.</p>
+
+    <h3>References</h3>
+    <p style="font-size: 0.92rem;">
+      Zorz, Z. (2018, June 6). MyHeritage suffers data breach, account details of 92+ million users compromised. <em>Help Net Security.</em> https://www.helpnetsecurity.com/2018/06/06/myheritage-data-breach/<br><br>
+      Ferguson, S. (2018, June 6). MyHeritage data breach of 92M accounts raises many questions. <em>Dark Reading.</em> https://www.darkreading.com/cloud-security/myheritage-data-breach-of-92m-accounts-raises-many-questions
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>📞 Contact</h2>
+    <ul class="contact-list">
+      <li>Email: <a href="mailto:miltonjessemoroni@gmail.com">miltonjessemoroni@gmail.com</a></li>
+      <li>Phone: +232 72 837 280</li>
+      <li>LinkedIn: <a href="https://linkedin.com/in/jesse-moroni-milton" target="_blank" rel="noopener">Connect with me</a></li>
+    </ul>
   </section>
 
 </main>
 
 <footer>
-  <div class="wrap">
-    <p>Last updated — 9/21/2026</p>
-  </div>
+  © 2026 Jesse Moroni Milton — All Rights Reserved
 </footer>
 
 </body>
