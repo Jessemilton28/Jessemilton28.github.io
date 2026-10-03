@@ -17,6 +17,54 @@
 
   * { box-sizing: border-box; }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: #fff;
+    color: var(--navy);
+    padding: 10px 16px;
+    z-index: 100;
+    font-weight: 600;
+    border-radius: 0 0 6px 0;
+  }
+
+  .skip-link:focus {
+    left: 0;
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: 2px;
+  }
+
+  #back-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--navy);
+    color: #fff;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    z-index: 15;
+  }
+
+  #back-to-top.visible {
+    display: flex;
+  }
+
   body {
     margin: 0;
     background: var(--bg);
@@ -120,6 +168,7 @@
   section {
     padding: 56px 0;
     border-bottom: 1px solid var(--border);
+    scroll-margin-top: 76px;
   }
 
   section:last-of-type { border-bottom: none; }
@@ -233,6 +282,8 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <header class="topbar">
   <div class="wrap">
     <div class="brand">
@@ -241,10 +292,13 @@
     </div>
     <nav class="mainnav">
       <a href="#home">Home</a>
+      <a href="#spiritual">Spiritual Portfolio</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills &amp; Certifications</a>
       <a href="#projects">Projects</a>
       <a href="#reflections">Reflections</a>
+      <a href="#mentalmap">Mental Map</a>
+      <a href="#usability">Usability Report</a>
     </nav>
   </div>
 </header>
@@ -255,10 +309,10 @@
   <p class="tagline">IT professional with hands-on experience in genealogical data systems, technical support, and infrastructure management — bringing the same care and diligence to my faith and family history work as to my technical craft.</p>
 </section>
 
-<main class="wrap">
+<main class="wrap" id="main-content">
 
   <section id="profile">
-    <h2>🚀 Professional Profile</h2>
+    <h2><span aria-hidden="true">🚀</span> Professional Profile</h2>
     <p>I'm an Information Technology graduate finishing my Bachelor of Science degree at Ensign College in December 2026. My work centers on data systems and technical support — currently as a Data Entry Specialist on the FamilySearch team at Springboard, and previously as an IT Support Technician. What draws me to this field is the same thing that draws me to my faith: the belief that small, careful, consistent work — whether maintaining accurate records or supporting someone through a technical problem — matters far beyond the task itself. This portfolio reflects both sides of that: the technical skills I've built and the principles that guide how I use them.</p>
     <ul class="highlights">
       <li>🎓 <strong>Education:</strong> BS &amp; AS in Information Technology, Ensign College, Utah (2026)</li>
@@ -268,7 +322,7 @@
   </section>
 
   <section id="skills">
-    <h2>🛠️ Core IT &amp; Data Pillars</h2>
+    <h2><span aria-hidden="true">🛠️</span> Core IT &amp; Data Pillars</h2>
 
     <div class="pillar">
       <h3>🗂️ FamilySearch &amp; Data Management</h3>
@@ -308,7 +362,7 @@
   </section>
 
   <section id="spiritual">
-    <h2>🕊️ Spiritual Progression Portfolio</h2>
+    <h2><span aria-hidden="true">🕊️</span> Spiritual Progression Portfolio</h2>
 
     <h3>Guiding Principles</h3>
 
@@ -323,7 +377,7 @@
     <h3>Spiritual Materials Collected</h3>
 
     <ul class="bullets">
-      <li><strong>Service</strong> — Mosiah 2:17: "when ye are in the service of your fellow beings ye are only in the service of your God." This verse reframes my work on the Family Research team as more than a job; helping people access their family history is, in a real sense, service to God.</li>
+      <li><strong>Service</strong> — Mosiah 2:17: "when ye are in the service of your fellow beings ye are only in the service of your God." This verse reframes my work on the FamilySearch team as more than a job; helping people access their family history is, in a real sense, service to God.</li>
       <li><strong>Family</strong> — Malachi 4:5–6, on turning the hearts of the children to their fathers. Working in family history research connects directly to this promise — the work isn't just data entry, it's part of turning hearts toward family across generations.</li>
       <li><strong>Faith Amid Uncertainty</strong> — Proverbs 3:5–6: "Trust in the Lord with all thine heart... and he shall direct thy paths." Balancing full-time work, school, and finishing my degree this December has involved a lot of uncertainty, and this verse has been a steady reminder to trust the process rather than needing to see the whole path.</li>
       <li><strong>Talk — "The Best Time to Plant a Tree" (Elder Dieter F. Uchtdorf)</strong> — This talk speaks directly to a pattern I recognize in myself: waiting for the "right moment" to start something instead of beginning now. It reinforced my Diligence and Patience principle — progress comes from starting consistently, not from waiting for ideal conditions.</li>
@@ -354,9 +408,15 @@
     <p>My professional competencies and spiritual beliefs aren't separate tracks running alongside each other — in practice, they're the same habits showing up in different contexts. My work processing genealogical records at Springboard requires sustained accuracy across repetitive, detail-heavy tasks; this is a direct expression of the Diligence and Patience principle I identified early in this course. The technical discipline of double-checking entries and following data procedures isn't just professional best practice — it's how I try to live out Galatians 6:9's call not to grow weary in doing good, one record at a time.</p>
     <p>Similarly, my approach to data stewardship — treating sensitive family history information as something entrusted to me rather than simply processed by me — comes directly from my Stewardship principle, grounded in D&C 104:13. This shows up concretely in how I handle access, accuracy, and security in my technical work, and it's part of why the MyHeritage data breach analysis resonated with me: a lapse in stewardship there is the same failure I actively try to guard against in my own work.</p>
     <p>Even my career decisions have been shaped by seeking revelation — praying through the decision to pursue this IT degree while working full-time was not separate from the professional planning involved; it was how I arrived at the confidence to make that plan. Looking at my competencies this way, I don't see a professional self and a spiritual self. I see one set of habits — diligence, stewardship, seeking guidance — that happens to show up on a résumé in one language and in a testimony in another.</p>
-  
+
+    <h3>Integrating Christlike Attributes: Patience</h3>
+    <p>Patience is a Christlike attribute I've already identified as central to my spiritual journey, grounded in Galatians 6:9's call not to grow weary in doing good. In principle, I understand patience as showing up consistently through repetitive, difficult work — which is easy to embrace when things are calm. The harder test is recognizing when I'm failing to live it.</p>
+    <p>My clearest personal warning sign is impatience or irritability under pressure. When I'm juggling full-time work, finishing my degree, and building this portfolio all at once, I notice it first in small ways: a short tone in a message, frustration over a minor technical hiccup, or feeling resentful toward tasks that would normally feel manageable. These moments are a signal — not that the workload itself is the problem, but that I've stopped approaching it with the patience I claim to value, and started treating it as something to just get through rather than something to do well.</p>
+    <p><strong>Strategy for Realignment:</strong> When I notice this warning sign, my strategy is to pause rather than push through. This looks like stepping away briefly for prayer or quiet reflection — the same practice that helped me find peace during a difficult season earlier in this course — and returning to Proverbs 3:5–6 as a reset: trusting the process instead of forcing speed. Practically, this also means giving myself permission to slow down on a task rather than rushing it carelessly, since rushing is usually the behavior that signals impatience has taken over. Recognizing this pattern doesn't mean I've mastered patience — it means I'm getting better at noticing when I've drifted from it, which is itself part of the growth this portfolio is meant to track.</p>
+  </section>
+
   <section id="experience">
-    <h2>💼 Professional Experience</h2>
+    <h2><span aria-hidden="true">💼</span> Professional Experience</h2>
 
     <h3>Data Entry Specialist — FamilySearch <span class="meta">| Springboard | 2026 – Present</span></h3>
     <p>Utilized Source Linker to process an average of 80 genealogical records per day, maintaining high accuracy while integrating sources and individuals into the Family Tree. Managed an average of 400 AI-indexed historical records per day, ensuring high-quality indexing and improving discoverability of genealogical records. Collaborated with a global team of genealogists to review and improve an average of 80–90 historical records daily, ensuring accurate, complete, and reliable family history data.</p>
@@ -386,7 +446,7 @@
   </section>
 
   <section id="projects">
-    <h2>📁 Projects</h2>
+    <h2><span aria-hidden="true">📁</span> Projects</h2>
 
     <h3>FamilySearch Work at Springboard</h3>
     <p>As a Data Entry Specialist on the FamilySearch team at Springboard, my role involves processing and verifying family history records with a high degree of accuracy. A recurring challenge is maintaining consistency and precision across large volumes of data, especially when records are incomplete or inconsistently formatted. I applied close attention to detail and adherence to established procedures to ensure the information stayed reliable. The outcome has been dependable, accurate records that support the broader research and family history work of the team.</p>
@@ -396,10 +456,13 @@
 
     <h3>Heritage Vault 2.0 Technical Proposal</h3>
     <p>Heritage Vault 2.0 was a system architecture and technical proposal I developed for a coursework project, outlining the design for a system rather than a built application. The main challenge was working through unfamiliar technical concepts and new technology as I designed the architecture, which required extra research and learning outside of what I already knew. I applied analytical and technical writing skills to translate those new concepts into a clear, well-reasoned proposal. The outcome was a completed technical proposal that demonstrated my ability to research, design, and document a system architecture from the ground up.</p>
+
+    <p><strong>Refinement and Ethical Integration (Week 4):</strong> Reflecting on the original proposal, I identified three areas for improvement: scalability as family trees grow, accessibility for less tech-savvy users, and data privacy for living individuals referenced in genealogical records. These challenges carry real ethical weight — genealogical systems store data about the living as well as the deceased, raising questions of consent that the original proposal didn't address.</p>
+    <p>I refined the project with five additions: a tiered visibility system (public, family-only, private) for granular sharing control; a consent flag requiring explicit acknowledgment before sharing records referencing living relatives; continuous security monitoring and audit logging, directly informed by my ethical analysis of the MyHeritage data breach; accessibility requirements including screen-reader compatibility and a simplified guided mode; and a data inheritance policy establishing a "vault successor" role for continuity of stewardship. Each refinement came from asking not just whether the system works technically, but who it could affect and how — moving the proposal from a purely technical document to one that is more accountable to the people whose family history it would ultimately hold.</p>
   </section>
 
   <section id="reflections">
-    <h2>🙏 Reflections</h2>
+    <h2><span aria-hidden="true">🙏</span> Reflections</h2>
 
     <h3>Ethical Dilemma Analysis: The 2018 MyHeritage Data Breach</h3>
     <p>MyHeritage's response to its 2018 data breach offers a useful case study in evaluating both the ethical failures that led to the incident and the professional standards demonstrated afterward. On the positive side, the company's incident response met several best-practice benchmarks: within eight hours of being notified, MyHeritage assembled an Information Security Incident Response Team, publicly disclosed the scope of the breach, and provided round-the-clock support to affected users — a level of transparency and urgency that cybersecurity commentators at the time called exemplary. The company was also honest about what had not been compromised, clarifying that more sensitive data (DNA records, family trees) sat on separate, more secure systems.</p>
@@ -414,6 +477,11 @@
     <p>Rather than relying on an external security researcher to discover the exposed file, MyHeritage could have implemented continuous automated monitoring across all systems handling user data — including systems outside its primary production environment — paired with regular third-party security audits and a formal bug bounty program inviting ethical hackers to responsibly disclose vulnerabilities before they're exploited. This approach sticks to the principle of diligence by making security detection proactive rather than reactive, and it upholds stewardship by treating vigilance as an ongoing responsibility rather than a response triggered only after harm has already occurred.</p>
     <p>This alternative would likely have led to significantly better outcomes for everyone involved. For users, the seven-month window during which their data sat exposed could have been reduced to days or hours, limiting the risk of the data being found and exploited by bad actors before MyHeritage even knew of the breach. For the company, earlier detection would have reduced reputational damage and potential legal liability, while a bug bounty program would have turned outside security researchers into allies rather than leaving discovery to chance. Most importantly, this approach honors the trust genealogy companies are given: people share deeply personal family and identity information expecting it to be protected proactively, not just apologized for after the fact.</p>
 
+    <h3>Ethical Dilemma Reflection: Personal View</h3>
+    <p>Working through the MyHeritage data breach across this course has changed how I think about my own role in IT, not just as a case study to analyze from the outside. Before this exercise, I thought of data ethics mostly in terms of following procedures correctly — don't share passwords, double-check entries, follow the rules I'm given. This dilemma pushed me to see that ethical responsibility in IT isn't just about compliance; it's about actively anticipating harm before it happens, even when no one is explicitly asking you to.</p>
+    <p>In my own work handling genealogical records, I don't have the same scale of responsibility MyHeritage's security team had, but the same principle applies at a smaller level: I'm trusted with information that matters deeply to real people, and that trust is easy to take for granted when the work becomes routine. Going forward, if I encounter a similar situation in my career — whether that's noticing a security gap, handling consent for sensitive data, or being tempted to treat a data-handling shortcut as harmless — my approach will be to treat vigilance as part of the job itself, not an extra step. I'd rather raise a concern that turns out to be nothing than stay silent about something that turns into a breach affecting thousands of people.</p>
+    <p>This exercise helped me understand that ethical challenges in IT are rarely about clear villains making obviously bad choices. MyHeritage's team wasn't negligent in an obvious way — they responded well once they knew. The harder, more realistic lesson is that ethical failure in this field often looks like good people being insufficiently proactive, which means the standard I hold myself to has to be higher than simply avoiding obvious wrongdoing.</p>
+
     <h3>References</h3>
     <p style="font-size: 0.92rem;">
       Zorz, Z. (2018, June 6). MyHeritage suffers data breach, account details of 92+ million users compromised. <em>Help Net Security.</em> https://www.helpnetsecurity.com/2018/06/06/myheritage-data-breach/<br><br>
@@ -421,8 +489,90 @@
     </p>
   </section>
 
+  <section id="mentalmap">
+    <h2><span aria-hidden="true">🧭</span> Spiritual–Professional Integration: A Mental Map</h2>
+    <p>The diagram below maps how each of my guiding spiritual principles corresponds to a specific professional practice I rely on daily. The dashed lines mark the direct pairings; all six connect back to a single center — the conviction that faith and professional competence aren't separate pursuits, but one integrated way of working.</p>
+
+    <svg viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:900px; display:block; margin: 24px auto; font-family: -apple-system, Helvetica, Arial, sans-serif;" role="img" aria-label="Mental map showing Diligence and Patience connected to Data Accuracy and Consistency, Stewardship connected to Data Security and Access Control, and Revelation through the Holy Ghost connected to Career Decision-Making, all linked through a central Faith and Profession node.">
+      <line x1="230" y1="150" x2="670" y2="150" stroke="#C7CEE8" stroke-width="2" stroke-dasharray="5,5"/>
+      <line x1="230" y1="310" x2="670" y2="310" stroke="#C7CEE8" stroke-width="2" stroke-dasharray="5,5"/>
+      <line x1="230" y1="470" x2="670" y2="470" stroke="#C7CEE8" stroke-width="2" stroke-dasharray="5,5"/>
+
+      <line x1="450" y1="310" x2="230" y2="150" stroke="#9FB4FF" stroke-width="2"/>
+      <line x1="450" y1="310" x2="230" y2="310" stroke="#9FB4FF" stroke-width="2"/>
+      <line x1="450" y1="310" x2="230" y2="470" stroke="#9FB4FF" stroke-width="2"/>
+      <line x1="450" y1="310" x2="670" y2="150" stroke="#9FB4FF" stroke-width="2"/>
+      <line x1="450" y1="310" x2="670" y2="310" stroke="#9FB4FF" stroke-width="2"/>
+      <line x1="450" y1="310" x2="670" y2="470" stroke="#9FB4FF" stroke-width="2"/>
+
+      <circle cx="450" cy="310" r="78" fill="#16215C"/>
+      <text x="450" y="300" text-anchor="middle" fill="#fff" font-weight="700" font-size="17">Faith &amp;</text>
+      <text x="450" y="322" text-anchor="middle" fill="#fff" font-weight="700" font-size="17">Profession</text>
+
+      <text x="120" y="60" text-anchor="middle" fill="#16215C" font-weight="700" font-size="15">SPIRITUAL</text>
+
+      <circle cx="150" cy="150" r="68" fill="#16215C"/>
+      <text x="150" y="142" text-anchor="middle" fill="#fff" font-weight="600" font-size="13">Diligence</text>
+      <text x="150" y="160" text-anchor="middle" fill="#fff" font-weight="600" font-size="13">&amp; Patience</text>
+
+      <circle cx="150" cy="310" r="68" fill="#16215C"/>
+      <text x="150" y="304" text-anchor="middle" fill="#fff" font-weight="600" font-size="13">Stewardship</text>
+
+      <circle cx="150" cy="470" r="68" fill="#16215C"/>
+      <text x="150" y="462" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">Revelation</text>
+      <text x="150" y="479" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">(Holy Ghost)</text>
+
+      <text x="780" y="60" text-anchor="middle" fill="#2F5FDB" font-weight="700" font-size="15">PROFESSIONAL</text>
+
+      <circle cx="750" cy="150" r="68" fill="#2F5FDB"/>
+      <text x="750" y="142" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">Data Accuracy</text>
+      <text x="750" y="160" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">&amp; Consistency</text>
+
+      <circle cx="750" cy="310" r="68" fill="#2F5FDB"/>
+      <text x="750" y="302" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">Data Security</text>
+      <text x="750" y="320" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">&amp; Access Control</text>
+
+      <circle cx="750" cy="470" r="68" fill="#2F5FDB"/>
+      <text x="750" y="462" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">Career</text>
+      <text x="750" y="479" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">Decision-Making</text>
+
+      <text x="450" y="580" text-anchor="middle" fill="#5B6478" font-size="13" font-style="italic">Dashed lines show where a spiritual principle and a professional practice directly correspond</text>
+    </svg>
+
+    <h3>Reflection</h3>
+    <p>Building this map made the connections feel less abstract than writing them out in paragraphs alone. Seeing Diligence and Patience drawn as a direct line to Data Accuracy made it clear that these aren't two separate commitments I happen to hold at the same time — they're the same commitment, expressed in two vocabularies. The same is true of Stewardship and Data Security: both are, at their core, about taking responsibility for something entrusted to me rather than something I simply possess.</p>
+    <p>The Revelation-to-Career-Decision-Making link is the one I find most meaningful, because it's the least "visible" in day-to-day work. Nobody sees the praying and pondering that went into decisions like pursuing this degree while working full-time — but that process is just as real a part of my professional development as any technical skill on my résumé. Mapping it out this way helped me see that the center of this whole portfolio isn't really "faith" or "career" as two separate projects. It's a single, integrated way of approaching work and life that happens to show up under different headings depending on who's asking.</p>
+  </section>
+
+  <section id="usability">
+    <h2><span aria-hidden="true">🔧</span> Usability Testing &amp; Design Enhancements</h2>
+    <h3>Methodology</h3>
+    <p>I conducted a self-directed usability test on the live site across desktop and mobile viewport widths, checking navigation behavior, keyboard accessibility, and screen-reader friendliness. This included clicking every navigation link, tabbing through the page using only the keyboard, and reviewing how decorative elements would be announced by assistive technology.</p>
+
+    <h3>Issues Identified</h3>
+    <ul class="bullets">
+      <li><strong>Sticky header overlap:</strong> Clicking a navigation link jumped to the correct section, but the sticky header then covered the section's heading, hiding the first line of content.</li>
+      <li><strong>Abrupt scrolling:</strong> Navigation jumps had no smooth transition, making the page feel disconnected when moving between sections.</li>
+      <li><strong>No way to return to the top:</strong> On a long single-page site, there was no quick way to get back to the navigation after reading a later section.</li>
+      <li><strong>Keyboard navigation gaps:</strong> There was no visible focus indicator on links, making it hard to tell where keyboard focus was while tabbing through the page, and no way to skip repeated navigation and jump straight to content.</li>
+      <li><strong>Decorative emoji in headings:</strong> Section header emoji (🚀, 🛠️, etc.) would likely be announced verbally by screen readers, adding noise without adding meaning.</li>
+    </ul>
+
+    <h3>Enhancements Implemented</h3>
+    <ul class="bullets">
+      <li>Added scroll-margin spacing to every section so jumping to it via navigation no longer hides the heading behind the sticky header.</li>
+      <li>Enabled smooth scrolling for all anchor-link navigation.</li>
+      <li>Added a "back to top" button that appears after scrolling down, for quick return to the navigation.</li>
+      <li>Added a visible focus outline for keyboard users and a "skip to main content" link for screen-reader and keyboard users to bypass repeated navigation.</li>
+      <li>Marked decorative emoji as hidden from assistive technology so screen readers announce only the meaningful heading text.</li>
+    </ul>
+
+    <h3>Impact</h3>
+    <p>These changes directly improve the experience for two groups the original design overlooked: keyboard-only users and screen-reader users, who previously had no reliable way to navigate the page efficiently or know where they were. The sticky-header overlap was also a functional bug that affected every visitor using the navigation menu, not just an accessibility edge case — fixing it improves usability for everyone who clicks a navigation link rather than scrolling manually.</p>
+  </section>
+
   <section id="contact">
-    <h2>📞 Contact</h2>
+    <h2><span aria-hidden="true">📞</span> Contact</h2>
     <ul class="contact-list">
       <li>Email: <a href="mailto:miltonjessemoroni@gmail.com">miltonjessemoroni@gmail.com</a></li>
       <li>Phone: +232 72 837 280</li>
@@ -435,6 +585,22 @@
 <footer>
   © 2026 Jesse Moroni Milton — All Rights Reserved
 </footer>
+
+<button id="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+<script>
+  const backToTop = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      backToTop.classList.add('visible');
+    } else {
+      backToTop.classList.remove('visible');
+    }
+  });
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
 
 </body>
 </html>
